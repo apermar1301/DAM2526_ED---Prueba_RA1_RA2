@@ -11,7 +11,7 @@ public class PiramideSumas {
 		do {
 			int num = leerEntero(sc, "Introduzca un número: "); // APM20251031 - Faltaba un ';'
 
-			while (num < 0 && num > 20) {
+			while (num < 0 || num > 20) { // APM20251031 - OR en vez de AND
 				num = leerEntero(sc, "**Valor fuera de rango** Introduzca un número entre 0 y 20: ");
 			}
 
@@ -54,9 +54,9 @@ public class PiramideSumas {
 
 			while (cont <= n) {
 				res += "+ " + cont + " ";
+				total += cont; // APM20251031 - Si no esta dentro del while no contara el total
 				cont++; // APM20251031 - Falta un incremento
 			}
-			total += cont;
 			cont += 1;
 
 			if (n != 0) {
